@@ -35,18 +35,18 @@ function sawtooth_wave_bl(t::Real; A::Real=1.0, T::Real=1.0, band::Real=20.0)::R
 end
 
 function triangular_wave_bl(t::Real; A::Real=1.0, T::Real=1.0, band::Real=20.0)::Real
-    y::Real = A/2
+    y::Real = 0
     for k in range(1, floor(band*T), step = 2)
-        y -= (4*A)*cos(2*pi*k*t/T)/((k*pi)^2)
+        y += (4*A*(1 - cos(π*k))/((π*k)^2))*cos(2*pi*k*(t - T/4)/T)
     end
 
     return y
 end
 
 function square_wave_bl(t::Real; A::Real=1.0, T::Real=1.0, band::Real=20.0)
-    y::Real = A/2
+    y::Real = 0
     for k in range(1, floor(band*T), step = 2)
-        y += 2*A*sin(2*π*k*t/T)/(k*π)
+        y += (2*A*(1 - cos(π*k))/(π*k))*sin(2*π*k*t/T)
     end
 
     return y
