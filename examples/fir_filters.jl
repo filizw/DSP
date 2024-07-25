@@ -98,7 +98,7 @@ lines!(ax1, f, amp)
 lines!(ax2, f, phase)
 current_figure()
 ## bp II
-b = DSP.firwin_bp_II(10, 0.2, 0.3)
+b = DSP.firwin_bp_II(11, 0.2, 0.3)
 
 N = 1000
 f = range(0, 1, N)
