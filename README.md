@@ -1,1 +1,2 @@
-# julia-dsp
+# DSP
+This repository contains the DSP.jl module developed for a Digital Signal Processing class, implementing various DSP algorithms. A set of short scripts demonstrating the usage of this module can be found in the `examples` folder.
